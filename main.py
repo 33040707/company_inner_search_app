@@ -63,9 +63,6 @@ cn.display_app_title()
 with st.sidebar:
     st.markdown("### 利用目的")
     st.markdown("モード選択")
-    st.markdown("【「社内文書検索」を選択した場合】")
-    st.markdown("社内文書を横断的に検索し、関連する文書のありかを提示します。")
-    st.markdown("【「社内問い合わせ」を選択した場合】")
 
     # モード切り替え
     # Streamlitのラジオボタンを表示
@@ -82,7 +79,6 @@ with st.sidebar:
 
 # AIメッセージの初期表示
 cn.display_initial_ai_message()
-
 
 ############################################################
 # 5. 会話ログの表示
