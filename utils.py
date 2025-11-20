@@ -59,7 +59,7 @@ def build_error_message(message):
     return "\n".join([message, ct.COMMON_ERROR_MESSAGE])
 
 
-def get_llm_response(chat_message):
+def get_llm_response(chat_message, k=5):
     """
     LLMからの回答取得
 
