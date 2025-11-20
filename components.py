@@ -84,7 +84,7 @@ def display_conversation_log():
                         icon = utils.get_source_icon(message['content']['main_file_path'])
                         # 参照元ドキュメントのページ番号が取得できた場合にのみ、ページ番号を表示
                         if "main_page_number" in message["content"]:
-                            st.success(f"{message['content']['main_file_path']}", icon=icon)
+                            st.success(f"{message['content']['main_file_path']}(Page: {message['content']['main_page_number']})", icon=icon)
                         else:
                             st.success(f"{message['content']['main_file_path']}", icon=icon)
                         
@@ -156,7 +156,7 @@ def display_search_llm_response(llm_response):
             # ページ番号を取得
             main_page_number = llm_response["context"][0].metadata["page"]
             # 「メインドキュメントのファイルパス」と「ページ番号」を表示
-            st.success(f"{main_file_path}", icon=icon)
+            st.success(f"{main_file_path}(Page: {main_page_number})", icon=icon)
         else:
             # 「メインドキュメントのファイルパス」を表示
             st.success(f"{main_file_path}", icon=icon)
@@ -295,7 +295,7 @@ def display_contact_llm_response(llm_response):
                 file_info = f"{file_path}"
             else:
                 # 「ファイルパス」のみ
-                file_info = f"{file_path}"
+                file_info = f"{file_path}(Page: {page_number})"
 
             # 参照元のありかに応じて、適したアイコンを取得
             icon = utils.get_source_icon(file_path)
